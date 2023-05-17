@@ -1,3 +1,20 @@
 docker image build . -t custom-caddy
 
 docker container run --name my-caddy-server -p 8080:80 -d custom-caddy
+
+docker container stop my-caddy-server
+
+docker container rm my-caddy-server
+
+docker container ls -a
+
+docker image build . -t custom-caddy
+
+docker container run --name my-caddy-server -p 8080:80 -v "${PWD}/arquivos/pages:/usr/src/pages" -d custom-caddy
+
+docker container stop my-caddy-server
+
+docker container rm my-caddy-server
+
+docker container ls -a
+
